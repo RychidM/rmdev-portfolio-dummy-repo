@@ -1,0 +1,15 @@
+.cv {
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            transition: color 0.5s ease-in-out;
+            margin-right: 10px;
+        }
+
+        .cv:hover {
+            background: linear-gradient(180deg, #F9E181,#835C2D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }

@@ -1,0 +1,30 @@
+<!-- header.component.html -->
+<header id="tt-header" class="tt-header-fixed">
+  <div class="tt-header-inner">
+    <div class="tt-header-col">
+      <div class="tt-logo">
+        <a routerLink="/">
+          <img appMagneticItem src="{{goldLogo.rmLogoGold}}" class="tt-logo-light magnetic-item" alt="Logo">
+          <img appMagneticItem src="{{goldLogo.rmLogoTransparent}}" class="tt-logo-dark magnetic-item" alt="Logo">
+        </a>
+      </div>
+    </div>
+
+    <div class="tt-header-col">
+      <div id="tt-ol-menu-toggle-btn-wrap">
+        <div class="tt-ol-menu-toggle-btn-text">
+          <span appAnimateText class="cv" [class.hidden]="isMenuOpen" targetText="DOWNLOAD">RESUME</span>
+          <span class="text-close" [class.hidden]="!isMenuOpen">Close</span>
+        </div>
+        <!-- <div class="tt-ol-menu-toggle-btn-holder">
+          <a href="#" class="tt-ol-menu-toggle-btn magnetic-item" (click)="toggleMenu()"><span></span></a>
+        </div> -->
+      </div>
+
+      <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count" [class.active]="isMenuOpen">
+        <!-- Menu content here (will be separated into its own component) -->
+        <app-menu [isOpen]="isMenuOpen"></app-menu>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,28 @@
+<!-- menu.component.html -->
+<div class="tt-ol-menu-holder">
+  <div class="tt-ol-menu-inner tt-wrap">
+    <div class="tt-ol-menu-content">
+      <ul class="tt-ol-menu-list">
+        <ng-container *ngFor="let item of menuItems">
+          <li class="tt-ol-submenu-wrap" [class.active]="item.children">
+            <div class="tt-ol-submenu-trigger">
+              <a [routerLink]="item.link">{{item.title}}</a>
+              <div class="tt-ol-submenu-caret-wrap" *ngIf="item.children">
+                <div class="tt-ol-submenu-caret magnetic-item"></div>
+              </div>
+            </div>
+            
+            <div class="tt-ol-submenu" *ngIf="item.children">
+              <ul class="tt-ol-submenu-list">
+                <li *ngFor="let child of item.children">
+                  <a [routerLink]="child.link">{{child.title}}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+  <div class="bg-noise"></div>
+</div>
