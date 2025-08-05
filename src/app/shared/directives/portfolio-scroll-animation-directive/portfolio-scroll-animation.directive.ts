@@ -12,7 +12,7 @@ export class PortfolioScrollAnimationDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     const ttSection = this.elementRef.nativeElement.querySelector('.tt-section');
       
-      const element = document.querySelector('.tt-heading');
+      const element = document.querySelector('tt-section-inner');
       this.porfolioAnimationService.animatePorfolioHeader(element!, ttSection);
   }
 

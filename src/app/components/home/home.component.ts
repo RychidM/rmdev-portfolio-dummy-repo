@@ -8,11 +8,12 @@ import { PortfolioComponent } from "../portfolio/portfolio.component";
 import { SmoothScrollDirective } from '../../shared/directives/smooth-scroll-directive/smooth-scroll.directive';
 import { HeroScrollAnimationDirective } from '../../shared/directives/hero-scoll-animation-directive/hero-scroll-animation.directive';
 import { PortfolioScrollAnimationDirective } from '../../shared/directives/portfolio-scroll-animation-directive/portfolio-scroll-animation.directive';
+import { ProfessionalExperienceComponent } from "../professional-experience/professional-experience.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, RouterOutlet, RouterModule, HeroComponent, PortfolioComponent, SmoothScrollDirective, HeroScrollAnimationDirective, PortfolioScrollAnimationDirective],
+  imports: [HeaderComponent, RouterOutlet, RouterModule, HeroComponent, PortfolioComponent, SmoothScrollDirective, HeroScrollAnimationDirective, ProfessionalExperienceComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

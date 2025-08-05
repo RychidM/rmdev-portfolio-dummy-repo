@@ -55,7 +55,8 @@ export class MagicCursorService {
 
   showText(text: string) {
 
-    this.ball.innerHTML = `<div class="ball-view">${text}</div>`;
+    this.ball.innerHTML = `<div class="ball-view"><p>${text}</p></div>`;
+    
     gsap.to(this.ball, {
       width: 95,
       height: 95,
@@ -66,6 +67,7 @@ export class MagicCursorService {
       fontFamily: 'San Serif',
       borderWidth: 0,
       backgroundColor: '#fff',
+      color: '#111',
       duration: 0.3,
     });
   }

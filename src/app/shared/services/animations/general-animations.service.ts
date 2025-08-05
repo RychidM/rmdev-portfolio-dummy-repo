@@ -13,18 +13,18 @@ export class GeneralAnimationsService implements OnDestroy {
 
   constructor() { }
 
-  fadeInUpAmimation(element: Element, triggerElement: HTMLElement, scroller: HTMLElement): void {
+  fadeInUpAmimation(element: Element, triggerElement: HTMLElement): void {
     const fadeInTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: triggerElement,
         start: 'top bottom',
         markers: false,
-        scroller: scroller,
+        // scroller: scroller,
       }
     });
 
 
-    fadeInTimeline.from(element, { duration: 2, opacity: 1, y: 100, ease: Expo.easeInOut, clearProps: 'all' }, "+=0.3");
+    fadeInTimeline.from(element, { duration: 2, autoAlpha: 0, y: 100, ease: Expo.easeOut, clearProps: 'all' }, "+=0.3");
   }
 
   stretchInUpAnimation(element: HTMLElement, triggerElement: HTMLElement): void {
@@ -67,7 +67,7 @@ export class GeneralAnimationsService implements OnDestroy {
       duration: 1.5,
       autoAlpha: 0,
       scale: 1.2,
-      ease: Power2.easeInOut,
+      ease: Power2.easeOut,
       clearProps: 'all',
      });
   }

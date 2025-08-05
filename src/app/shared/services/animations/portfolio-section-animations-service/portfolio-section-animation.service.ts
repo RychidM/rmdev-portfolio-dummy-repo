@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, Inject, Injectable, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, ElementRef, Injectable, OnDestroy } from '@angular/core';
 import { SmoothScrollService } from '../../smooth-scroll-service/smooth-scroll.service';
 import { filter, take } from 'rxjs';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -11,19 +11,19 @@ gsap.registerPlugin(ScrollTrigger);
 @Injectable({
   providedIn: 'root'
 })
-export class PortfolioSectionAnimationService implements AfterViewInit, OnDestroy {
+export class PortfolioSectionAnimationService implements OnDestroy {
 
   constructor(private smoothScrollService: SmoothScrollService, private generalAnimationService: GeneralAnimationsService) { }
   scroller?: HTMLElement | null;
   private triggers: ScrollTrigger[] = [];
 
-  ngAfterViewInit(): void {
-    this.smoothScrollService.scrollerReady$
-      .pipe(filter(scroller => !!scroller), take(1))
-      .subscribe(scroller => {
-        this.scroller = scroller;
-      });
-  }
+  // ngAfterViewInit(): void {
+  //   this.smoothScrollService.scrollerReady$
+  //     .pipe(filter(scroller => !!scroller), take(1))
+  //     .subscribe(scroller => {
+  //       this.scroller = scroller;
+  //     });
+  // }
 
 
   initParallaxAnimation(elRef: ElementRef): void {
@@ -45,7 +45,6 @@ export class PortfolioSectionAnimationService implements AfterViewInit, OnDestro
             yPercent: -50,
             ease: 'none',
             scrollTrigger: {
-              scroller: this.scroller,
               trigger: item,
               start: 'top bottom',
               end: 'bottom top',
@@ -60,7 +59,7 @@ export class PortfolioSectionAnimationService implements AfterViewInit, OnDestro
   }
 
   animatePorfolioHeader(element: Element, triggerElement: HTMLElement) {
-    this.generalAnimationService.fadeInUpAmimation(element, triggerElement, this.scroller!);
+    this.generalAnimationService.fadeInUpAmimation(element, triggerElement);
   }
 
   ngOnDestroy(): void {
