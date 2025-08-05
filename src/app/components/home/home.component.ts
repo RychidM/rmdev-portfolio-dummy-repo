@@ -7,11 +7,12 @@ import { HeroComponent } from "../hero/hero.component";
 import { PortfolioComponent } from "../portfolio/portfolio.component";
 import { SmoothScrollDirective } from '../../shared/directives/smooth-scroll-directive/smooth-scroll.directive';
 import { HeroScrollAnimationDirective } from '../../shared/directives/hero-scoll-animation-directive/hero-scroll-animation.directive';
+import { PortfolioScrollAnimationDirective } from '../../shared/directives/portfolio-scroll-animation-directive/portfolio-scroll-animation.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, RouterOutlet, RouterModule, HeroComponent, PortfolioComponent, SmoothScrollDirective, HeroScrollAnimationDirective],
+  imports: [HeaderComponent, RouterOutlet, RouterModule, HeroComponent, PortfolioComponent, SmoothScrollDirective, HeroScrollAnimationDirective, PortfolioScrollAnimationDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
