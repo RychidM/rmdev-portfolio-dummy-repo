@@ -112,6 +112,46 @@ export class SmoothScrollService {
     }
   }
 
+  /**
+   * Scrolls to a specific anchor link on the page.
+   * @param anchor The ID of the element to scroll to (e.g., "#my-section").
+   * @param offset An optional pixel offset from the top.
+   */
+  public scrollToAnchor(anchor: string, offset: number = 0) : void {
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const targetElement = document.querySelector<HTMLElement>(anchor);
+
+    if (!targetElement) {
+      console.warn(`Anchor element "${anchor}" not found.`);
+      return;
+    }
+
+    if (this.scrollbar) {
+      // Calculate the position of the target element relative to the scroll container's content
+      const topY = targetElement.getBoundingClientRect().top - this.scrollbar.containerEl.getBoundingClientRect().top - offset;
+
+      gsap.to(this.scrollbar, {
+        duration: 1.5,
+        scrollTop: this.scrollbar.scrollTop + topY,
+        ease: 'expo.inOut',
+      });
+      
+    } else {
+      // Fallback to native scrolling
+      const topY = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({
+        top: topY,
+        behavior: 'smooth'
+      });
+    }
+
+
+  }
+
     onDestroy(): void {
       if (this.scrollbar) {
         this.scrollbar.destroy();
