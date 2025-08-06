@@ -1,7 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import Scrollbar from 'smooth-scrollbar';
-import { gsap } from 'gsap';
+import { gsap, Expo } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { BehaviorSubject } from 'rxjs';
 
@@ -83,6 +83,33 @@ export class SmoothScrollService {
    */  
   public getScroller() : HTMLElement | null {
     return this.scrollerElement;
+  }
+
+  /**
+   * Smoothly scrolls the page to the top.
+   * If the smooth scrollbar is active, it uses GSAP for animation.
+   * Otherwise, it falls back to the native browser's smooth scroll behavior.
+   */
+  public scrollToTop(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    
+    // Check if the smooth scrollbar instance exists
+    if (this.scrollbar) {
+      // Use GSAP to animate the scrollbar's scrollTop property
+      gsap.to(this.scrollbar, {
+        duration: 1.5,
+        scrollTop: 0,
+        ease: 'expo.inOut' // Corresponds to Expo.easeInOut
+      });
+    } else {
+      // Fallback for native scrolling on mobile or when smooth scroll is disabled
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 
     onDestroy(): void {
