@@ -12,10 +12,10 @@
       <div appParallaxAnimation class="tt-grid ttgr-layout-creative-2 ttgr-not-cropped ttgr-gap-4">
         <div class="tt-grid-items-wrap isotope-items-wrap">
           <div class="tt-grid-item isotope-item" *ngFor="let item of portfolioItems; let i = index">
-            <div appCursorText [appCursorText]="item.title" class="ttgr-item-inner">
+            <div class="ttgr-item-inner">
               <div class="portfolio-grid-item">
                 <a [routerLink]="item.link" class="pgi-image-wrap" data-cursor="View<br>Project">
-                  <div class="pgi-image-holder cover-opacity-2">
+                  <div appCursorText [appCursorText]="'View Project'" class="pgi-image-holder cover-opacity-2">
                     <div class="anim-zoomin-wrap">
                       <div appZoomInAnimation class="pgi-image-inner anim-zoomin">
                         <ng-container *ngIf="!item.video; else videoBlock">

@@ -23,8 +23,8 @@ export class MagicCursorService {
     gsap.set(this.ball, {
       xPercent: -50,
       yPercent: -50,
-      width: 24,
-      height: 24,
+      width: 30,
+      height: 30,
       borderRadius: '50%',
       borderWidth: 1,
       opacity: 0.5,
@@ -55,20 +55,21 @@ export class MagicCursorService {
 
   showText(text: string) {
 
-    this.ball.innerHTML = `<div class="ball-view"><p>${text}</p></div>`;
+    this.ball.innerHTML = `<div class="ball-view">${text}</div>`;
     
     gsap.to(this.ball, {
       width: 95,
       height: 95,
-      opacity: 1,
+      opacity: 0.8,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      fontFamily: 'San Serif',
-      borderWidth: 0,
+      borderWidth: 1,
+      borderColor: '#fff',
       backgroundColor: '#fff',
       color: '#111',
       duration: 0.3,
+      lineHeight: 1,
     });
   }
 
@@ -76,12 +77,13 @@ export class MagicCursorService {
   reset() {
     this.ball.innerHTML = '';
     gsap.to(this.ball, {
-      width: 34,
-      height: 34,
+      width: 30,
+      height: 30,
       opacity: 0.5,
-      borderWidth: 2,
-      backgroundColor: 'transparent',
-      duration: 0.3
+      borderWidth: 1,
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      duration: 0.3,
+      boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
     });
   }
 
@@ -96,12 +98,13 @@ export class MagicCursorService {
   resetBall(): void {
     gsap.to(this.ball, {
       scale: 1,
-      borderWidth: 2,
+      borderWidth: 1,
       opacity: 0.5,
-      backgroundColor: 'transparent',
-      width: 34,
-      height: 34,
-      duration: 0.3
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      width: 30,
+      height: 30,
+      duration: 0.3,
+      boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
     });
   }
 

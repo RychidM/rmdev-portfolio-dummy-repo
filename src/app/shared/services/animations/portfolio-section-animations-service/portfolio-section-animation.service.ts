@@ -13,17 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class PortfolioSectionAnimationService implements OnDestroy {
 
-  constructor(private smoothScrollService: SmoothScrollService, private generalAnimationService: GeneralAnimationsService) { }
-  scroller?: HTMLElement | null;
+  constructor(private generalAnimationService: GeneralAnimationsService) { }
   private triggers: ScrollTrigger[] = [];
-
-  // ngAfterViewInit(): void {
-  //   this.smoothScrollService.scrollerReady$
-  //     .pipe(filter(scroller => !!scroller), take(1))
-  //     .subscribe(scroller => {
-  //       this.scroller = scroller;
-  //     });
-  // }
 
 
   initParallaxAnimation(elRef: ElementRef): void {

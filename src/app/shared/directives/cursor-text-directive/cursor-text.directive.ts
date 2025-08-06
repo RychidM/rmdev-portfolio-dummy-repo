@@ -12,6 +12,7 @@ export class CursorTextDirective {
 
   @HostListener('mouseenter') onEnter() {
     this.cursor.showText(this.text);
+    this.elementRef.nativeElement.style.cursor = 'none';
   }
 
   @HostListener('mouseleave') onLeave() {

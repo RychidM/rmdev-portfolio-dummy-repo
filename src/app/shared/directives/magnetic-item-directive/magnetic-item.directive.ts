@@ -13,8 +13,8 @@ export class MagneticItemDirective {
 
   @HostListener('mouseenter') onEnter() {
     this.cursorService.scaleBall(this.scale);
-    // change mouse cursor to pointer
-    this.elRef.nativeElement.style.cursor = 'pointer';
+    // change mouse cursor to none
+    this.elRef.nativeElement.style.cursor = 'none';
   }
 
   @HostListener('mouseleave') onLeave() {
