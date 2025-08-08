@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import { Expo } from 'gsap/all';
 import { TransitionService } from '../../services/transition-service/transition.service';
 import photos from '@constants/photos';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-page-transition',

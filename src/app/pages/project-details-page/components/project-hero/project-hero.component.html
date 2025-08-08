@@ -1,0 +1,64 @@
+<div id="page-header" class="ph-full ph-cap-xxlg ph-center ph-image-cropped ph-image-cover-2  ph-content-parallax">
+  <div class="page-header-inner tt-wrap">
+    <div class="ph-image">
+      <div class="ph-image-inner">
+        <img [src]="projectData?.projectInfo?.banner" alt="Project">
+      </div>
+    </div>
+
+    <div class="ph-caption">
+      <div class="ph-categories ph-appear">
+        <div class="ph-category">{{ projectData?.projectInfo?.category }}</div>
+      </div>
+      <h2 class="ph-caption-title ph-appear">{{ projectData?.projectInfo?.title }}</h2>
+    </div>
+
+    <app-project-info [info]="projectData?.projectInfo?.info || []"></app-project-info>
+  </div>
+
+  <a href="/project-details/blue-palette/#page-content" class="scroll-down-circle" data-offset="30">
+    <div class="sdc-inner ph-appear">
+      <div class="sdc-icon"><i class="fas fa-chevron-down"></i></div>
+      <svg viewBox="0 0 500 500">
+        <defs>
+          <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+        </defs>
+        <text dy="30">
+          <textPath xlink:href="#textcircle">Scroll down - Scroll down -</textPath>
+        </text>
+      </svg>
+    </div>
+  </a>
+
+  <div class="made-with-love ph-appear">
+    <div class="mwl-inner">
+      <div class="mwl-text">Made with</div>
+      <div class="mwl-icon"><i class="far fa-heart"></i></div>
+    </div>
+  </div>
+
+  <div class="ph-share">
+    <div class="ph-share-trigger ph-appear">
+      <div class="ph-share-text">Share</div>
+      <div class="ph-share-icon magnetic-item"><i class="fas fa-share-alt"></i></div>
+    </div>
+
+    <div class="ph-share-content">
+      <div class="ph-share-close cursor-close"><div class="bg-noise"></div></div>
+      <div class="ph-share-inner">
+        <h1 class="ph-share-title ph-share-appear">Spread the Word!</h1>
+        <div class="ph-share-subtitle ph-share-appear">Share this project with your friends</div>
+
+        <div class="social-buttons ph-share-appear">
+          <ul>
+            <li><a href="#0" class="magnetic-item" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#0" class="magnetic-item" title="Share on Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#0" class="magnetic-item" title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="ph-share-ghost ph-share-appear">Share</div>
+    </div>
+  </div>
+</div>

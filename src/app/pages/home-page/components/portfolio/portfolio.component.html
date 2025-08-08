@@ -1,0 +1,54 @@
+<!-- portfolio-grid.component.html -->
+<div class="tt-section no-padding-bottom">
+  <div appFadeIn class="tt-section-inner">
+    <div class="tt-heading tt-heading-lg tt-heading-center margin-bottom-10-p anim-fadeinup">
+      <h3 class="tt-heading-subtitle text-gray">Latest Projects</h3>
+      <h2 class="tt-heading-title">Works</h2>
+      <div class="tt-btn tt-btn-link margin-top-20">
+        <a routerLink="/portfolio" data-hover="See All Works">See All Works</a>
+      </div>
+    </div>
+    <div id="portfolio-grid" class="pgi-cap-inside pgi-hover">
+      <div appParallaxAnimation class="tt-grid ttgr-layout-creative-1 ttgr-not-cropped ttgr-gap-4">
+        <div class="tt-grid-items-wrap isotope-items-wrap">
+          <div class="tt-grid-item isotope-item" *ngFor="let item of portfolioItems; let i = index">
+            <div class="ttgr-item-inner">
+              <div class="portfolio-grid-item">
+                <a class="pgi-image-wrap" (click)="navigateToProject(item.link)" href="javascript:void(0)" >
+                  <div appCursorText [appCursorText]="'View Project'" class="pgi-image-holder cover-opacity-2">
+                    <div class="anim-zoomin-wrap">
+                      <div appZoomInAnimation class="pgi-image-inner anim-zoomin">
+                        <ng-container *ngIf="!item.video; else videoBlock">
+                          <figure class="pgi-image ttgr-height">
+                            <img [src]="item.image" [alt]="item.title">
+                          </figure>
+                        </ng-container>
+                        <ng-template #videoBlock>
+                          <figure class="pgi-video-wrap ttgr-height">
+                            <video class="pgi-video" loop muted preload="metadata" [poster]="item.poster">
+                              <source src="assets/vids/fashion-week.mp4" type="video/mp4">
+                              <source src="assets/vids/fashion-week.webm" type="video/webm">
+                            </video>
+                          </figure>
+                        </ng-template>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <div class="pgi-caption">
+                  <div class="pgi-caption-inner">
+                    <h2 class="pgi-title">{{item.title}}</h2>
+                    <div class="pgi-categories-wrap">
+                      <div class="pgi-category">{{item.category}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,10 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
 import { MagicCursorService } from '../../services/magic-cursor-service/magic-cursor.service';
 
 @Directive({
   selector: '[appCursorText]'
 })
-export class CursorTextDirective {
+export class CursorTextDirective implements OnDestroy{
 
   @Input('appCursorText') text: string = '';
 
@@ -19,4 +19,7 @@ export class CursorTextDirective {
     this.cursor.reset();
   }
 
+  ngOnDestroy(): void {
+    this.cursor.reset();
+  }
 }

@@ -1,0 +1,36 @@
+.rm-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: -0.5rem;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // transform: translate(-50%, -50%);
+  text-align: center;
+
+  .rm-caption-title {
+    position: relative;
+    // margin: 0;
+    font-size: clamp(40px, 5vw, 94px);
+    font-weight: bold;
+    font-weight: 500;
+    background: linear-gradient(90deg, #835C2D, #F9E181, #835C2D);
+    opacity: 0.8;
+    font-size: 3rem;
+
+    h1 {
+      line-height: 0;
+    }
+  }
+
+  .rm-caption-subtitle {
+    background: #fff;
+    margin-top: -0.5rem;
+    color: #835C2D;
+
+  }
+
+}

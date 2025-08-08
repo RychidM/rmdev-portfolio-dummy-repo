@@ -1,0 +1,36 @@
+<!-- <div *ngIf="projectId; else noProject" style="padding: 100px; color: white;">
+  <h1>Details for Project ID: {{ projectId }}</h1>
+  <p>Project data would be displayed here.</p>
+</div>
+<ng-template #noProject>
+  <p style="padding: 100px; color: white;">No project ID was provided or project not found.</p>
+</ng-template> -->
+
+<main id="body-inner">
+  <app-header />
+  <div appSmoothScroll id="scroll-container">
+    <div id="content-wrap">
+      <app-project-hero [projectData]="projectData" />
+      <div id="page-content">
+        <div class="staggered-grid-container">
+          <div class="grid-item item-1">
+            <div class="card-content">
+              <p>Card 1</p>
+            </div>
+          </div>
+          <div class="grid-item item-2">
+            <div class="card-content">
+              <p>Card 2</p>
+            </div>
+          </div>
+          <div class="grid-item item-3">
+            <div class="card-content">
+              <p>Card 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer />
+</main>

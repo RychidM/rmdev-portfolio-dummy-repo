@@ -11,5 +11,9 @@ const bpMain = "../assets/img/bp-banner-main.png";
 const bp1 = "../assets/img/bp-banner-1.png";
 const bp2 = "../assets/img/bp-banner-2.png";
 const bPosMain = "../assets/img/b-pos-banner-main.png";
+const bpScreenRec = "../assets/img/bp-sr.png";
+const bpSc1 = "../assets/img/bp-sc-1.png";
+const bpSc2 = "../assets/img/bp-sc-2.png";
 
-export default { rmLogoBlack, rmLogoWhite, rmLogoGold, rmLogoTransparent, ph6, homeImg, bbMain, bb1, bb2, bpMain, bp1, bp2, bPosMain, };
+
+export default { rmLogoBlack, rmLogoWhite, rmLogoGold, rmLogoTransparent, ph6, homeImg, bbMain, bb1, bb2, bpMain, bp1, bp2, bPosMain, bpSc1, bpSc2, bpScreenRec };

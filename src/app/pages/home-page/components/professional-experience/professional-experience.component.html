@@ -1,0 +1,38 @@
+<!-- services.component.html -->
+<div class="tt-section padding-bottom-xlg-150 padding-left-sm-3-p padding-right-sm-3-p">
+  <div class="tt-section-inner tt-wrap max-width-1100">
+    <div appFadeIn class="tt-heading tt-heading-lg tt-heading-center margin-bottom-15-p anim-fadeinup">
+      <h3 class="tt-heading-subtitle text-gray">{{title}}</h3>
+      <h2 class="tt-heading-title">{{subTitle}}</h2>
+    </div>
+
+    <div class="tt-accordion tt-ac-xlg tt-ac-borders">
+      <div appFadeIn class="tt-accordion-item anim-fadeinup" 
+      [class.active]="xp.isOpen" [appAccordion]="xp.isOpen"
+      *ngFor="let xp of experiences; let i = index">
+        <div class="tt-accordion-heading" (click)="toggleXP(i)">
+          <h3 class="tt-ac-head-title">{{xp.title}}</h3>
+          <div class="tt-accordion-subtext">{{xp.subTitle}}</div>
+          <div class="tt-accordion-caret-wrap">
+            <div appMagneticItem [scale]="2" class="tt-accordion-caret magnetic-item" [class.open]="xp.isOpen"></div>
+          </div>
+        </div>
+
+        <div class="tt-accordion-content max-width-800" [class.open]="!xp.isOpen">
+          <div class="tech-stack"></div>
+          <p>{{xp.content}}</p>
+          <div class="tech-stack-wrap" *ngIf="xp.techStack?.length">
+                  <strong>Tech Stack:</strong>
+                  <ul class="tt-list-row">
+                      <li *ngFor="let tech of xp.techStack">{{ tech }}</li>
+                  </ul>
+              </div>
+          <!-- <div *ngFor="let stack of ex.techStack" class="tt-btn tt-btn-link"> -->
+            <!-- <p>{{stack}}</p> -->
+            <!-- <a routerLink="/services" data-hover="Read More">Read More</a> -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

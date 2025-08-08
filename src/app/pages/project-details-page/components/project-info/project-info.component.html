@@ -1,0 +1,15 @@
+<div class="project-info-list anim-fadeinup margin-top-60">
+  <ul>
+    <li *ngFor="let item of info">
+      <div class="pi-list-heading">{{ item.title }}</div>
+      <div class="pi-list-cont">
+        <ng-container *ngIf="item.title === 'Link'; else textContent">
+          <a [href]="" target="_blank" rel="noopener">
+            {{ item.content }}<span class="pi-list-icon"><i class="fas fa-arrow-right"></i></span>
+          </a>
+        </ng-container>
+        <ng-template #textContent>{{ item.content }}</ng-template>
+      </div>
+    </li>
+  </ul>
+</div>
